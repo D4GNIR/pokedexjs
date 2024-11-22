@@ -11,3 +11,12 @@ body {
     background-color: darkviolet;
     color: white;
 }
+
+.pokemon-card {
+    background: rgb(221, 24, 24);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
