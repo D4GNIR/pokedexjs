@@ -1,5 +1,5 @@
-// Nombre de pokemon
-const pokemonCount = 300;
+// Nombre de pokemon à afficher
+const pokemonCount = 151;
 // Pokedex
 var pokedex = {};
 
@@ -37,7 +37,7 @@ async function getPokemon(num) {
     // Récupere les données du pokemon
     let res = await fetch(url);
     let pokemon = await res.json();
-    // Ajoute les données du pokemon dans la pokedex
+    // Ajoute les données du pokemon dans le pokedex
     pokedex[num] = {
         "name": pokemon["name"],
         "img": pokemon["sprites"]["front_default"],

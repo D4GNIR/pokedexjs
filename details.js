@@ -1,6 +1,6 @@
 // Récupere l'id du pokemon dans l'url
 const urlParams = new URLSearchParams(window.location.search);
-// Récupere l'id du pokemon
+// Récupere l'id du pokemon dans urlParams
 const pokemonId = urlParams.get('id');
 
 async function loadPokemonDetails() {
@@ -13,7 +13,7 @@ async function loadPokemonDetails() {
     document.getElementById("pokemon-name").innerText = pokemon.name.toUpperCase();
     document.getElementById("pokemon-img").src = pokemon.sprites.front_default;
     
-    // Ajout des types
+    // Ajout des types, récupération de l'élement pokemon-types du html
     const typesDiv = document.getElementById("pokemon-types");
     // Il peut y avoir plusieus type donc boucle foreach
     pokemon.types.forEach(type => {
