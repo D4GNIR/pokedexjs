@@ -1,7 +1,9 @@
+/* Body */
 body {
     background-color: #FFFFFF;
 }
 
+/* Types */
 .grass {
     background-color: green;
     color: white;
@@ -12,6 +14,7 @@ body {
     color: white;
 }
 
+/* Pokemon card */
 .pokemon-card {
     background: rgb(221, 24, 24);
     border-radius: 10px;
