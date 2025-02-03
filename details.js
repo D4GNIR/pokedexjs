@@ -12,7 +12,7 @@ async function loadPokemonDetails() {
     // On récupere les élément grace à leurs ID
     document.getElementById("pokemon-name").innerText = pokemon.name.toUpperCase();
     document.getElementById("pokemon-img").src = pokemon.sprites.front_default;
-    /// Test
+    
     // Ajout des types, récupération de l'élement pokemon-types du html
     const typesDiv = document.getElementById("pokemon-types");
     // Il peut y avoir plusieus type donc boucle foreach
