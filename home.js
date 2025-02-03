@@ -41,5 +41,7 @@ async function getPokemon(num) {
     pokedex[num] = {
         "name": pokemon["name"],
         "img": pokemon["sprites"]["front_default"],
+        
+    
     };
 }

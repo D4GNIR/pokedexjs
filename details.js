@@ -41,3 +41,10 @@ if (pokemonId) {
     // On charge les détails du pokemon
     loadPokemonDetails();
 }
+
+
+
+
+
+
+

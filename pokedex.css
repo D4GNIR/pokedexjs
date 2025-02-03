@@ -1,6 +1,7 @@
 /* Body */
 body {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+
 }
 
 /* Types */
@@ -13,13 +14,107 @@ body {
     background-color: darkviolet;
     color: white;
 }
-
+.bug {
+    background-color: rgb(98, 255, 0);
+    color: white;
+}
+.fire {
+    background-color: rgb(251, 109, 0);
+    color: rgb(255, 255, 255);
+}
+.flying {
+    background-color: rgb(104, 126, 216);
+    color: rgb(250, 250, 250);
+}
+.normal {
+    background-color: rgb(193, 184, 160);
+    color: white;
+}
+.water {
+    background-color: rgb(22, 12, 162);
+    color: white;
+}
+.electric {
+    background-color: rgb(255, 238, 0);
+    color: white;
+}
+.ground {
+    background-color: rgb(72, 81, 81);
+    color: white;
+}
+.fairy {
+    background-color: rgb(255, 2, 167);
+    color: white;
+}
+.psychic {
+    background-color: rgba(132, 11, 134, 0.892);
+    color: white;
+}
+.rock {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+.dragon {
+    background-color: rgb(151, 131, 6);
+    color: white;
+}
 /* Pokemon card */
 .pokemon-card {
-    background: rgb(221, 24, 24);
+    background-image: url(gold.jpg);
     border-radius: 10px;
     padding: 20px;
     margin: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    justify-items: center 
 }
 
+#pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px; /* Espace entre les cartes */
+    padding: 20px;
+    justify-items: center; /* Centre les éléments dans chaque colonne */
+}
+body.home {
+    background-image: url(wallpaper-pikachu-pokemon-fond-ecran-4K-HD-manga-mobile-desktop-ordinateur-tablette-scaled.jpg);
+    background-size: cover; /* Pour couvrir tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed;
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+}
+
+/* Background for Detail page */
+body.detail {
+    background-image: url('pokeball.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    border: 10px solid rgb(255, 230, 0); 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.html {
+    border: 10px solid rgb(255, 230, 0); 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.pokemeon-img{
+    position: absolute;
+    top: 40px; /* Décale l'élément de 50px depuis le haut */
+    right:280px ; /* Décale l'élément de 20px depuis la gauche */
+    height: 400px;
+}
+.pokemon-description{
+    position: absolute;
+    top:450px;
+    right:330px;
+    height:100px;
+    color: #df1010;
+}
