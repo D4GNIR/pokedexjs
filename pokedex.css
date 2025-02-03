@@ -112,9 +112,20 @@ body.detail {
     height: 400px;
 }
 .pokemon-description{
-    position: absolute;
-    top:450px;
-    right:330px;
-    height:100px;
+    text-align: center; /* Centre le texte */
+    margin: 20px; /* Ajuste l'espacement autour du texte */
     color: #df1010;
+}
+.bordure{
+    
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    border: 10px solid rgb(255, 230, 0);
+    margin: auto;
+    box-sizing: border-box;
+    height: 600px;
+    width: 50%;
+    position: relative;
 }
