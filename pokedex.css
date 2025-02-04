@@ -5,60 +5,19 @@ body {
 }
 
 /* Types */
-.grass {
-    background-color: green;
-    
-}
-
-.poison {
-    background-color: darkviolet;
-  
-}
-.bug {
-    background-color: rgb(98, 255, 0);
-  
-}
-.fire {
-    background-color: rgb(251, 109, 0);
-    
-    
-}
-.flying {
-    background-color: rgb(104, 126, 216);
-    
-}
-.normal {
-    background-color: rgb(193, 184, 160);
-   
-}
-.water {
-    background-color: rgb(22, 12, 162);
-   
-}
-.electric {
-    background-color: rgb(255, 238, 0);
-    color: rgb(0, 0, 0);
-}
-.ground {
-    background-color: rgb(72, 81, 81);
-    
-}
-.fairy {
-    background-color: rgb(255, 2, 167);
-  
-}
-.psychic {
-    background-color: rgba(132, 11, 134, 0.892);
-   
-}
-.rock {
-    background-color: rgb(53, 53, 53);
-   
-}
-.dragon {
-    background-color: rgb(151, 131, 6);
-   
-}
+.grass { background-color: green; }
+.poison { background-color: purple; }
+.bug {background-color:rgb(98, 255, 0); }
+.fire { background-color: orange; }
+    .flying {background-color: rgb(104, 126, 216);}
+.normal {background-color: rgb(193, 184, 160);}
+.water { background-color: blue; }
+.electric { background-color: yellow; color: black; }
+.ground { background-color: brown; }
+.fairy {background-color: rgb(255, 2, 167);}
+.psychic {background-color: rgba(132, 11, 134, 0.892);}
+.rock {background-color: rgb(53, 53, 53);}
+.dragon {background-color: rgb(151, 131, 6);}
 /* Pokemon card */
 .pokemon-card {
     background-image: url(ploikuj.png);
@@ -67,6 +26,14 @@ body {
     margin: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     justify-items: center 
+}
+.pokemon-card:hover{
+    transform: scale(1.1); /* Légère mise en avant */
+    background-color: srgb(0, 0, 0);
+    box-shadow: 0 6px 12px rgb(255, 255, 255); /* Ombre plus intense */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    border-radius: 15px; /* Coins plus arrondis */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
 }
 
 #pokemon-grid {
@@ -110,7 +77,7 @@ body.detail {
     position: relative; /* Garde l'image positionnée */
     margin: 0 auto; /* Centrer horizontalement */
     height: 200px; /* Ajuste la taille de l'image */
-    width: 90%; /* Agrandit l'image sur les côtés (90% de la largeur du conteneur) */
+    width: 300%; /* Agrandit l'image sur les côtés (90% de la largeur du conteneur) */
     max-width: 300px; /* Limite la largeur maximale à 300px pour ne pas déborder */
     top: -100px; /* Décale légèrement vers le haut */
     border: 5px solid #FFD700; /* Bordure dorée */
@@ -120,18 +87,40 @@ body.detail {
     object-fit: contain; /* Adapte l'image au conteneur sans déformation */
     padding: 5px; /* Crée un espace entre l'image et la bordure */
 }
+.pokemeon-img:hover{
+    transform: scale(1.1); /* Légère mise en avant */
+    background-color: srgb(0, 0, 0);
+    box-shadow: 0 6px 12px rgb(255, 255, 255); /* Ombre plus intense */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    border-radius: 15px; /* Coins plus arrondis */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
+}
+
+
+
+
 
 .pokemon-description{
     text-align: center; /* Centre le texte horizontalement */
     margin: 20px 10px; /* Décalage de la bordure (haut/bas et gauche/droite) */
     position: absolute; /* Position précise */
     top: 400px; /* Position en dessous des types */
-    left: 50%; /* Centre horizontalement */
-    transform: translateX(-50%); /* Ajuste pour garder la description vraiment centrée */
-    color: #df1010; /* Couleur rouge pour rester visible */
+    color: #000000; /* Couleur rouge pour rester visible */
     font-size: 16px; /* Ajuste la taille du texte si nécessaire */
     max-width: 80%; /* Limite la largeur pour un meilleur rendu */
 }
+.pokemon-description:hover{
+    top: 400px; /* Position en dessous des types */
+    max-width: 80%; /* Limite la largeur pour un meilleur rendu */
+    transform: scale(1.1); /* Légère mise en avant */
+    background-color: srgb(0, 0, 0);
+    box-shadow: 0 6px 12px rgb(255, 255, 255); /* Ombre plus intense */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    border-radius: 15px; /* Coins plus arrondis */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
+}
+
+
 .bordure{
     
     display: flex;
@@ -145,18 +134,30 @@ body.detail {
     width: 30%;
     position: relative;
 }
-#pokemon-name{
+.pokemon-name{
     text-align: left; /* Aligne à gauche */
     margin: 0; /* Supprime les marges */
     padding: 10px; /* Espacement pour éviter que le texte touche la bordure */
     font-size: 24px; /* Taille du texte */
-    color: #43403d; /* Couleur */
+    color: #ffffff; /* Couleur */
     width: 100%; /* Prend toute la largeur disponible */
     box-sizing: border-box; /* Prend en compte le padding */
     position: absolute; /* Positionnement relatif au conteneur parent */
     top: 10px; /* Décale le texte juste en dessous de la bordure */
     left: 10px; /* Décale légèrement à gauche */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    border-radius: 15px; /* Coins plus arrondis */
 }
+
+.pokemon-name:hover{
+    transform: scale(1.1); /* Légère mise en avant */
+    background-color: srgb(0, 0, 0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ombre plus intense */
+    top: 10px; /* Décale le texte juste en dessous de la bordure */
+    left: 10px; /* Décale légèrement à gauche */
+}
+
 #pokemon-types{
     display: flex;
     flex-direction: column; /* Les types s'empilent verticalement */
@@ -170,13 +171,25 @@ body.detail {
     box-sizing: border-box; /* Prend en compte les marges et padding */
 }
 .types{
-    border-radius: 5px; /* Coins arrondis */
+    border-radius: 15px; /* Coins plus arrondis */
     padding: 5px 10px; /* Espacement interne */
     margin-bottom: 5px; /* Espacement entre les types */
     text-align: center; /* Centre le texte */
     font-size: 14px; /* Taille de la police */
     font-weight: bold; /* Texte en gras */
-    color: white; /* Texte blanc */
     min-width: 80px; /* Largeur minimale */
-    background-color: rgba(0, 0, 0, 0.1); /* Couleur de fond par défaut */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    position: relative; /* Nécessaire pour l'effet derrière le texte */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+}
+/* Optionnel : effet au survol */
+.types:hover {
+    transform: scale(1.1); /* Légère mise en avant */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ombre plus intense */
+}
+.type-gradient {
+    background: linear-gradient(90deg, var(--type-color1), var(--type-color2));
+    border-radius: 10px; /* Ajout d'arrondi pour un effet visuel agréable */
+    transition: background 0.3s ease-in-out; /* Animation douce lors du changement */
 }

@@ -1,60 +1,45 @@
-// Récupere l'id du pokemon dans l'url
+// Récupère l'ID du Pokémon dans l'URL
 const urlParams = new URLSearchParams(window.location.search);
-// Récupere l'id du pokemon dans urlParams
 const pokemonId = urlParams.get('id');
 
 async function loadPokemonDetails() {
-    // On récupere l'url du pokemon
-    let url = "https://pokeapi.co/api/v2/pokemon/" + pokemonId;
-    // On récupere les données du pokemon
-    let res = await fetch(url);
-    let pokemon = await res.json();
-    // On récupere les élément grace à leurs ID
+    // API pour récupérer les détails du Pokémon
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    const res = await fetch(url);
+    const pokemon = await res.json();
+
+    // Met à jour les détails dans le HTML
     document.getElementById("pokemon-name").innerText = pokemon.name.toUpperCase();
     document.getElementById("pokemon-img").src = pokemon.sprites.front_default;
-    
-    // Ajout des types, récupération de l'élement pokemon-types du html
+
+    // Ajout des types
     const typesDiv = document.getElementById("pokemon-types");
-    // Il peut y avoir plusieus type donc boucle foreach
-    pokemon.types.forEach(type => {
-        // Création du span
-        const typeSpan = document.createElement("span");
-        // On passe les types en majuscule
-        typeSpan.innerText = type.type.name.toUpperCase();
-        // On ajoute la class type-box et le type
-        typeSpan.classList.add("type-box", type.type.name);
-        // On ajoute le span au div
+    typesDiv.innerHTML = ""; // Réinitialise le contenu
+    pokemon.types.forEach(({ type }) => {
+        const typeSpan = document.createElement("div");
+        typeSpan.classList.add("types", type.name); // Classe pour la couleur
+        typeSpan.classList.add("types"); // Classe pour la couleur
+        typeSpan.innerText = type.name.toUpperCase(); // Texte en majuscules
         typesDiv.appendChild(typeSpan);
     });
 
-    // On récupere la description
+    // Récupère et affiche la description
     const speciesRes = await fetch(pokemon.species.url);
     const speciesData = await speciesRes.json();
-    // On récupere les élément grace à leurs ID
-    document.getElementById("pokemon-description").innerText = 
-        // On récupere la description   
-        speciesData.flavor_text_entries[9].flavor_text;
+    document.getElementById("pokemon-description").innerText =
+        speciesData.flavor_text_entries.find(entry => entry.language.name === "en").flavor_text;
 }
 
-// Si l'id du pokemon est présent
+// Charge les détails du Pokémon si l'ID est présent
 if (pokemonId) {
-    // On charge les détails du pokemon
     loadPokemonDetails();
 }
-// Exemple de structure pour les types
-const types = pokedex[num]["types"]; // Assure-toi que les types sont récupérés dans ton API
-
-let typesContainer = document.getElementById("pokemon-types");
-typesContainer.innerHTML = ""; // Réinitialise les types
-
-types.forEach(type => {
-    let typeElement = document.createElement("div");
-    typeElement.classList.add("type", type.toLowerCase()); // Ajoute la classe pour la couleur
-    typeElement.innerText = type; // Nom du type
-    typesContainer.appendChild(typeElement);
+pokemon.types.forEach(({ type }) => {
+    const typeSpan = document.createElement("div");
+    typeSpan.classList.add("types", type.name); // Ajoute les classes générales et spécifiques
+    typeSpan.innerText = type.name.toUpperCase(); // Texte en majuscules
+    typesDiv.appendChild(typeSpan);
 });
-
-
 
 
 
