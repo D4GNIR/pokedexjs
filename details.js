@@ -41,6 +41,18 @@ if (pokemonId) {
     // On charge les détails du pokemon
     loadPokemonDetails();
 }
+// Exemple de structure pour les types
+const types = pokedex[num]["types"]; // Assure-toi que les types sont récupérés dans ton API
+
+let typesContainer = document.getElementById("pokemon-types");
+typesContainer.innerHTML = ""; // Réinitialise les types
+
+types.forEach(type => {
+    let typeElement = document.createElement("div");
+    typeElement.classList.add("type", type.toLowerCase()); // Ajoute la classe pour la couleur
+    typeElement.innerText = type; // Nom du type
+    typesContainer.appendChild(typeElement);
+});
 
 
 

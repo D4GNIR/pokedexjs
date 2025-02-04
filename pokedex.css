@@ -7,60 +7,61 @@ body {
 /* Types */
 .grass {
     background-color: green;
-    color: white;
+    
 }
 
 .poison {
     background-color: darkviolet;
-    color: white;
+  
 }
 .bug {
     background-color: rgb(98, 255, 0);
-    color: white;
+  
 }
 .fire {
     background-color: rgb(251, 109, 0);
-    color: rgb(255, 255, 255);
+    
+    
 }
 .flying {
     background-color: rgb(104, 126, 216);
-    color: rgb(250, 250, 250);
+    
 }
 .normal {
     background-color: rgb(193, 184, 160);
-    color: white;
+   
 }
 .water {
     background-color: rgb(22, 12, 162);
-    color: white;
+   
 }
 .electric {
     background-color: rgb(255, 238, 0);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .ground {
     background-color: rgb(72, 81, 81);
-    color: white;
+    
 }
 .fairy {
     background-color: rgb(255, 2, 167);
-    color: white;
+  
 }
 .psychic {
     background-color: rgba(132, 11, 134, 0.892);
-    color: white;
+   
 }
 .rock {
     background-color: rgb(53, 53, 53);
-    color: white;
+   
 }
 .dragon {
     background-color: rgb(151, 131, 6);
-    color: white;
+   
 }
 /* Pokemon card */
 .pokemon-card {
-    background-image: url(gold.jpg);
+    background-image: url(ploikuj.png);
     border-radius: 10px;
     padding: 20px;
     margin: 5px;
@@ -106,15 +107,30 @@ body.detail {
 }
 
 .pokemeon-img{
-    position: absolute;
-    top: 40px; /* Décale l'élément de 50px depuis le haut */
-    right:280px ; /* Décale l'élément de 20px depuis la gauche */
-    height: 400px;
+    position: relative; /* Garde l'image positionnée */
+    margin: 0 auto; /* Centrer horizontalement */
+    height: 200px; /* Ajuste la taille de l'image */
+    width: 90%; /* Agrandit l'image sur les côtés (90% de la largeur du conteneur) */
+    max-width: 300px; /* Limite la largeur maximale à 300px pour ne pas déborder */
+    top: -100px; /* Décale légèrement vers le haut */
+    border: 5px solid #FFD700; /* Bordure dorée */
+    border-radius: 15px; /* Coins arrondis pour ressembler à une carte */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet 3D */
+    background-image:url('fofofo.jpg'); /* Ajoute un fond blanc derrière l'image */
+    object-fit: contain; /* Adapte l'image au conteneur sans déformation */
+    padding: 5px; /* Crée un espace entre l'image et la bordure */
 }
+
 .pokemon-description{
-    text-align: center; /* Centre le texte */
-    margin: 20px; /* Ajuste l'espacement autour du texte */
-    color: #df1010;
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 20px 10px; /* Décalage de la bordure (haut/bas et gauche/droite) */
+    position: absolute; /* Position précise */
+    top: 400px; /* Position en dessous des types */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste pour garder la description vraiment centrée */
+    color: #df1010; /* Couleur rouge pour rester visible */
+    font-size: 16px; /* Ajuste la taille du texte si nécessaire */
+    max-width: 80%; /* Limite la largeur pour un meilleur rendu */
 }
 .bordure{
     
@@ -126,6 +142,41 @@ body.detail {
     margin: auto;
     box-sizing: border-box;
     height: 600px;
-    width: 50%;
+    width: 30%;
     position: relative;
+}
+#pokemon-name{
+    text-align: left; /* Aligne à gauche */
+    margin: 0; /* Supprime les marges */
+    padding: 10px; /* Espacement pour éviter que le texte touche la bordure */
+    font-size: 24px; /* Taille du texte */
+    color: #43403d; /* Couleur */
+    width: 100%; /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Prend en compte le padding */
+    position: absolute; /* Positionnement relatif au conteneur parent */
+    top: 10px; /* Décale le texte juste en dessous de la bordure */
+    left: 10px; /* Décale légèrement à gauche */
+}
+#pokemon-types{
+    display: flex;
+    flex-direction: column; /* Les types s'empilent verticalement */
+    align-items: flex-start; /* Aligne les types à gauche */
+    margin: 0 10px; /* Espacement à gauche et à droite */
+    padding: 0; /* Pas d'espace interne */
+    position: absolute; /* Position relative */
+    top: 340px; /* Place les types un peu plus bas */
+    left: 10px; /* Collé à gauche */
+    width: auto; /* Taille ajustée automatiquement */
+    box-sizing: border-box; /* Prend en compte les marges et padding */
+}
+.types{
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px 10px; /* Espacement interne */
+    margin-bottom: 5px; /* Espacement entre les types */
+    text-align: center; /* Centre le texte */
+    font-size: 14px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    color: white; /* Texte blanc */
+    min-width: 80px; /* Largeur minimale */
+    background-color: rgba(0, 0, 0, 0.1); /* Couleur de fond par défaut */
 }
