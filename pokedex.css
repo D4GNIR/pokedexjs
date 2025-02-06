@@ -67,6 +67,19 @@ body {
     justify-items: center;
     background-color: #00000051;
 }
+/* Pour les écrans de taille moyenne (tablettes) */
+@media screen and (max-width: 768px) {
+    #pokemon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pour les petits écrans (smartphones) */
+@media screen and (max-width: 480px) {
+    #pokemon-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 .grass { background: linear-gradient(green, lightgreen); }
 .poison { background: linear-gradient(purple, pink); }
 .fire { background: linear-gradient(orange, red); }
@@ -95,12 +108,11 @@ body.home {
 
 /* Background for Detail page */
 body.detail {
-    background-image: url('pokeball.webp');
+    background-image: url('black\ thing.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    border: 10px solid rgb(255, 230, 0); 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;
@@ -112,7 +124,7 @@ body.detail {
 }
 
 .html {
-    border: 10px solid rgb(255, 230, 0); 
+
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;
@@ -193,19 +205,16 @@ body.detail {
     height: 600px;
     width: 30%;
     position: relative;
-    transition: background 0.3s ease-in-out; /* Animation douce lors du changement */
 }
 
 .bordure:hover{
     transform: scale(1.1); /* Légère mise en avant */
-    background-color: srgb(0, 0, 0);
     box-shadow: 0 6px 12px rgb(255, 255, 255); /* Ombre plus intense */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
     border-radius: 15px; /* Coins plus arrondis */
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Effet de halo lumineux */
     text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
     animation: glow 1.5s infinite alternate;
-    background: linear-gradient(90deg, var(--type-color1), var(--type-color2));
     border-radius: 10px; /* Ajout d'arrondi pour un effet visuel agréable */
     
     }
@@ -375,17 +384,17 @@ body.detail {
     margin-top: 10px;
   }
   
+  .back-button{
+    margin: 5em;
+  }
   /* Icône en arrière-plan */
   .icon-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1; /* Icône derrière */
     font-size: 4em;
     color: rgba(0, 0, 0, 0.1); /* Semi-transparent */
     pointer-events: none; /* Empêche les interactions */
   }
+
   .glow-effect{
     background: linear-gradient(90deg, var(--type-color1), var(--type-color2));
     border-radius: 10px; /* Ajout d'arrondi pour un effet visuel agréable */
@@ -416,4 +425,37 @@ header {
     justify-content: center;
     gap: 20px;
     padding: 2em;
+}
+.stat {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.stat-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.stat-bar {
+    width: 100px;
+    height: 20px;
+    background-color: #e0e0e0;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+}
+
+.stat-bar::before {
+    content: attr(data-value);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white;
+}
+
+.stat-bar:hover {
+    width: calc(100px + 40px); /* Animation d'extension */
+    background-color: #ff9800;
 }
