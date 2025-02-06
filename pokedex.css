@@ -5,6 +5,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     font-size: 30px;
+    background-color: #f0f8ff;
+    color: #333;
 }
 
 /* Types */
@@ -24,13 +26,25 @@ body {
 .fyghting{background-color: rgb(214, 85, 11);}
 /* Pokemon card */
 .pokemon-card {
-    background-image: url();
-    border-radius: 10px;
-    padding: 20px;
-    margin: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    justify-items: center;
-    color: white; 
+    color: #f0f0f0;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-top: 10px;
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  width: 120px;
+  height: 150px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 .pokemon-card:hover{
     transform: scale(1.1); /* Légère mise en avant */
@@ -53,6 +67,24 @@ body {
     justify-items: center;
     background-color: #00000051;
 }
+.grass { background: linear-gradient(green, lightgreen); }
+.poison { background: linear-gradient(purple, pink); }
+.fire { background: linear-gradient(orange, red); }
+.water { background: linear-gradient(blue, lightblue); }
+.electric { background: linear-gradient(yellow, gold); }
+.ground { background: linear-gradient(brown, sandybrown); }
+.flying { background: linear-gradient(skyblue, white); }
+.bug { background: linear-gradient(olive, yellowgreen); }
+.rock { background: linear-gradient(gray, darkgray); }
+.fairy { background: linear-gradient(pink, lavender); }
+.psychic { background: linear-gradient(violet, indigo); }
+.dragon { background: linear-gradient(gold, orange); }
+.fighting { background: linear-gradient(saddlebrown, peru); }
+.ghost{ background: linear-gradient(rgba(70, 70, 64, 0.688), rgb(115, 133, 117)); }
+.pokemon-card img {
+    width: 80px;
+    height: 80px;
+  }
 body.home {
     background-image: url(clasificacion-de-todos-los-juegos-pokemon-segun-su-dificultad-nuzlocke-1.webp);
     background-size: cover; /* Pour couvrir tout l'écran */
@@ -76,6 +108,7 @@ body.detail {
     transition: background 2s ease-in-out;
     margin: 0;
     padding: 0;
+   
 }
 
 .html {
@@ -191,6 +224,12 @@ body.detail {
     border-radius: 15px; /* Coins plus arrondis */
     text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
     animation: glow 1.5s infinite alternate;
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    margin: 0.5em 0;
+    
 }
 
 .pokemon-name:hover{
@@ -215,6 +254,8 @@ body.detail {
     gap: 20px;
     padding: 20px;
     justify-items: center;
+    font-size: 0.9em;
+    color: #555;
 }
 
 .types {
@@ -309,8 +350,12 @@ body.detail {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     box-shadow: 0 6px 12px rgb(255, 255, 255); /* Ombre plus intense */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    border-radius: 12px;
 }
-    /* Autres styles selon vos besoins */
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
   
   
   /* Image des Pokémon */
@@ -320,6 +365,7 @@ body.detail {
     width: 100px;
     height: 100px;
     margin-top: 20px;
+    
   }
   
   /* Texte des Pokémon */
@@ -347,3 +393,27 @@ body.detail {
     text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
 
   }
+  footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #eee;
+    color: #333;
+}
+/* Titre principal */
+header {
+    text-align: center;
+    background-color: #ffcb05;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#title {
+    font-size: 2.5em;
+    text-shadow: 2px 2px #555;
+}
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2em;
+}
