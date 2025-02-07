@@ -99,16 +99,17 @@ body {
     height: 80px;
   }
 body.home {
-    background-image: url(clasificacion-de-todos-los-juegos-pokemon-segun-su-dificultad-nuzlocke-1.webp);
+    background-image: url(img/clasificacion-de-todos-los-juegos-pokemon-segun-su-dificultad-nuzlocke-1.webp);
     background-size: cover; /* Pour couvrir tout l'écran */
     background-position: center; /* Centre l'image */
     background-attachment: fixed;
     background-repeat: no-repeat; /* Évite la répétition de l'image */
+    background-color: #00000051;
 }
 
 /* Background for Detail page */
 body.detail {
-    background-image: url('black\ thing.jpg');
+    background-image: url('img/black.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -141,7 +142,7 @@ body.detail {
     border: 5px solid #FFD700; /* Bordure dorée */
     border-radius: 15px; /* Coins arrondis pour ressembler à une carte */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet 3D */
-    background-image:url('fofofo.jpg'); /* Ajoute un fond blanc derrière l'image */
+    background-image:url('img/fofofo.jpg'); /* Ajoute un fond blanc derrière l'image */
     object-fit: contain; /* Adapte l'image au conteneur sans déformation */
     padding: 5px; /* Crée un espace entre l'image et la bordure */
     transition: background 0.3s ease-in-out; /* Animation douce lors du changement */
@@ -305,6 +306,7 @@ body.detail {
     color:#ffffff;
     text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
     animation: glow 1.5s infinite alternate;
+    border: #FFD700;
    }
 .pokédex:hover{
      padding: 10px; /* Espacement pour éviter que le texte touche la bordure */
@@ -426,36 +428,26 @@ header {
     gap: 20px;
     padding: 2em;
 }
-.stat {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.stat-label {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.stat-bar {
-    width: 100px;
-    height: 20px;
-    background-color: #e0e0e0;
-    position: relative;
-    transition: width 0.3s ease-in-out;
-}
-
-.stat-bar::before {
-    content: attr(data-value);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#toggle-music{
+    border-radius: 15px;
+    border: 2px solid rgb(255, 230, 0);
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    text-align: center;
     font-size: 14px;
-    color: white;
+    color:#ffffff;
+    font-weight: bold;
+    min-width: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
+    animation: glow 1.5s infinite alternate;
 }
-
-.stat-bar:hover {
-    width: calc(100px + 40px); /* Animation d'extension */
-    background-color: #ff9800;
+#toggle-music:hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgb(255, 255, 255);
+    text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
+    animation: glow 1.5s infinite alternate;
+    transition: background 0.3s ease-in-out; /* Animation douce lors du changement */
 }

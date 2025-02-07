@@ -64,13 +64,35 @@ window.onload = async function () {
     document.getElementById("pokemon-grid").appendChild(pokemon);
   }
 };
-document.getElementById('toggle-music-detail').addEventListener('click', function() {
-  var audio = document.getElementById('background-music');
-  if (audio.paused) {
-      audio.play();
-      this.textContent = "Pause";
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('background-music');
+  const toggleButton = document.getElementById('toggle-music');
+
+  // Charger l'état de la musique depuis localStorage
+  if (localStorage.getItem('musicPlaying') === 'true') {
+      audio.currentTime = localStorage.getItem('musicTime') || 0; // Reprendre à l'endroit où elle a été arrêtée
+      audio.play().catch(() => {}); // Eviter l'erreur de l'autoplay bloqué par le navigateur
+      toggleButton.textContent = "Pause";
   } else {
       audio.pause();
-      this.textContent = "Play";
+      toggleButton.textContent = "Play";
   }
+
+  // Gérer le bouton pause/play
+  toggleButton.addEventListener('click', () => {
+      if (audio.paused) {
+          audio.play();
+          toggleButton.textContent = "Pause";
+          localStorage.setItem('musicPlaying', 'true'); // Sauvegarder l'état
+      } else {
+          audio.pause();
+          toggleButton.textContent = "Play";
+          localStorage.setItem('musicPlaying', 'false'); // Sauvegarder l'état
+      }
+  });
+
+  // Sauvegarder la position de la musique avant de quitter
+  window.addEventListener('beforeunload', () => {
+      localStorage.setItem('musicTime', audio.currentTime); // Sauvegarder la position actuelle
+  });
 });
