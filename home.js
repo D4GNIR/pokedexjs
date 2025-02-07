@@ -64,3 +64,13 @@ window.onload = async function () {
     document.getElementById("pokemon-grid").appendChild(pokemon);
   }
 };
+document.getElementById('toggle-music-detail').addEventListener('click', function() {
+  var audio = document.getElementById('background-music');
+  if (audio.paused) {
+      audio.play();
+      this.textContent = "Pause";
+  } else {
+      audio.pause();
+      this.textContent = "Play";
+  }
+});

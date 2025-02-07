@@ -102,3 +102,28 @@ function getTypeColor(type) {
 
 // Charger les détails du Pokémon
 loadPokemonDetails();   
+// Référence à l'élément audio
+const audio = document.getElementById('background-music');
+const toggleButton = document.getElementById('toggle-music');
+
+// Charger l'état de la musique
+if (localStorage.getItem('musicPlaying') === 'true') {
+    audio.play();
+    toggleButton.textContent = "Pause";
+} else {
+    audio.pause();
+    toggleButton.textContent = "Play";
+}
+
+// Gérer le bouton pause/play
+toggleButton.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "Pause";
+        localStorage.setItem('musicPlaying', 'true'); // Sauvegarder l'état
+    } else {
+        audio.pause();
+        toggleButton.textContent = "Play";
+        localStorage.setItem('musicPlaying', 'false'); // Sauvegarder l'état
+    }
+});
